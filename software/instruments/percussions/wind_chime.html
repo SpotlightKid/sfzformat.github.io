@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Unreal: Wind Chime - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" title="News" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz1">SFZ v1 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz2">SFZ v2 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/cakewalk">SFZ v2 Opcodes (Cakewalk)</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/aria/">ARIA Extensions</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/linuxsampler/">LinuxSampler Extensions</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/all_opcodes">All Opcodes</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/">Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/envelope_generators">Envelope Generators</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/modulations/lfo">LFO</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="/software/instruments">Instruments</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/subtractive_synths">Subtractive Synthesizers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDocs"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Docs</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDocs">
+		
+			
+								<a class="dropdown-item"
+									href="/docs/website-development-reference">Website Development Reference</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/docs/jekyll-windows-setup">Jekyll Setup on Windows</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/docs/adding-player-opcode-list">Add Players Description and Opcode Support Pages</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/docs/adding-instruments">Add Instruments</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/docs/adding-multimedia-content">Add Multimedia Content</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+					</ul>
+				</div>
+				<form class="form-inline my-2 my-lg-0" role="search"
+					action="/search/">
+					<input class="form-control mr-sm-2" type="search" name="query"
+						placeholder="Search" aria-label="Search">
+				</form>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article>
+<h1>
+        
+        
+          <a href="/software/instruments/">Instruments</a> | <a href="/software/instruments/percussions/">
+	Percussions</a>
+        
+        
+      </h1>
+    
+      <h2>
+        
+        
+          <a href="https://unreal-instruments.wixsite.com/unreal-instruments/wind-chime">Wind Chime</a>
+        
+        
+      </h2>
+<p>Wind Chime Percussion</p>
+    
+      <h2>
+        
+        
+          Audio Example
+        
+        
+      </h2>
+<audio src="https://sfzformat.github.io/assets/audio/percussions/wind_chime.mp3" controls preload></audio>
+    
+      <h2>
+        
+        
+          Info
+        
+        
+      </h2>
+<table class="table table-sm table-hover table-striped table-responsive">
+	<tr class="table-bordered">
+		<th>Author</th>
+		<td>Unreal Instruments</td>
+	</tr><tr class="table-bordered">
+		<th>License</th>
+		<td>Public Domain</td>
+	</tr></table><table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Download</th>
+			<th scope="col">Format</th>
+			<th scope="col">Samplerate</th>
+			<th scope="col">Size</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="https://drive.google.com/open?id=1ZTifS6mozIfoMKYUydgDOUrFl700k6ed">Instrument</a></td>
+			<td>flac</td><td>96 KHz</td><td>1006 MB</td>
+			<td></td>
+		</tr></tbody>
+</table><style>
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.333%;
+	height: 0;
+    background: black;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    border: 0;
+}    
+</style>
+
+<script>
+function get_youtube_id(url) {
+    var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+    return (url.match(p)) ? RegExp.$1 : false;
+}
+function vimeo_embed(url,el) {
+    var id = false;
+    $.ajax({
+      url: 'https://vimeo.com/api/oembed.json?url='+url,
+      async: true,
+      success: function(response) {
+        if(response.video_id) {
+          id = response.video_id;
+          if(url.indexOf('autoplay=1') !== -1) var autoplay=1; else var autoplay=0;
+          if(url.indexOf('loop=1') !== -1) var loop=1; else var loop=0;
+          var theInnerHTML = '<div class="videoWrapper"><iframe src="https://player.vimeo.com/video/'+id+'/?byline=0&title=0&portrait=0';
+          if(autoplay==1) theInnerHTML += '&autoplay=1';
+          if(loop==1) theInnerHTML += '&loop=1';
+          theInnerHTML += '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'; 
+          el.innerHTML = theInnerHTML;
+        }
+      }
+    });
+}
+function video_embed() {
+    var p = document.getElementsByTagName('p');
+    for(var i = 0; i < p.length; i++) {
+        //check if this is an external url (that starts with https:// or http://
+        if (p[i].innerHTML.indexOf("http://") == 0 ||
+            p[i].innerHTML.indexOf("https://") == 0) {
+            var youtube_id = get_youtube_id(p[i].innerHTML);
+            if(youtube_id) {
+                if(p[i].innerHTML.indexOf('autoplay=1') !== -1) var autoplay=1; else var autoplay=0;
+                if(p[i].innerHTML.indexOf('loop=1') !== -1) var loop=1; else var loop=0;
+                var theInnerHTML = '<div class="videoWrapper"><iframe width="720" height="420" src="https://www.youtube.com/embed/' + youtube_id + '?rel=0&showinfo=0';
+                if(autoplay==1) theInnerHTML += '&autoplay=1';
+                if(loop==1) theInnerHTML += '&loop=1&playlist='+youtube_id+'&version=3';
+                if(p[i].innerHTML.indexOf('start=') !== -1) theInnerHTML += '&start='+p[i].innerHTML.substring(p[i].innerHTML.indexOf('start=')+6);
+                theInnerHTML += '" frameborder="0" allowfullscreen></iframe></div>';
+                p[i].innerHTML = theInnerHTML;
+            }
+            if(p[i].innerHTML.indexOf('vimeo.com') !== -1) {
+                //ask vimeo for the id and place the embed
+                vimeo_embed(p[i].innerHTML,p[i]);
+            }
+        }
+    }
+}
+video_embed();
+
+function mp3_embed() {
+    var p = document.getElementsByTagName('p');
+    for(var i = 0; i < p.length; i++) {
+        if(p[i].innerHTML.indexOf('.mp3') !== -1) {
+            var str = p[i].innerHTML.split('?');
+            if(str.length == 1) str[1] = '';
+            var str1 = str[1];
+            str1 = str1.replace('&','').replace('&','');
+            str1 = str1.replace('autoplay=1','').replace('autoplay=0','');
+            str1 = str1.replace('loop=1','').replace('loop=0','');
+            str1 = str1.replace('controls=0','').replace('controls=1','');
+
+            if (str[0].lastIndexOf('.mp3', str[0].length - 4) === str[0].length - 4 && str1.length == 0) {
+                if(str[1].indexOf('autoplay=1') !== -1) var autoplay=1; else var autoplay=0;
+                if(str[1].indexOf('loop=1') !== -1) var loop=1; else var loop=0;
+                if(str[1].indexOf('controls=0') !== -1) var controls=0; else var controls=1;
+                var newInnerHTML = '<audio';
+                if(autoplay==1) newInnerHTML += ' autoplay';
+                if(loop==1) newInnerHTML += ' loop';
+                if(controls==1) newInnerHTML += ' controls';
+                newInnerHTML += '><source src="'+str[0]+'" type="audio/mpeg">Your browser does not support the audio element.</audio>';
+                p[i].innerHTML = newInnerHTML;
+            }
+        }
+    }
+}
+mp3_embed();
+</script>
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzinstruments/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer><p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/software/instruments/percussions/wind_chime.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+		<script>
+		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+			event.preventDefault();
+			$(this).ekkoLightbox({
+				alwaysShowClose: true
+			});
+		});
+		</script>
+
+
+	</body>
+</html>
